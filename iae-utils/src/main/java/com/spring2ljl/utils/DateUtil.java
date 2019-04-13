@@ -12,4 +12,12 @@ public class DateUtil {
         SimpleDateFormat format = new SimpleDateFormat("yyyy");
         return format.format(date);
     }
+    public static String formatymd(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(date);
+    }
+    public static String formatm(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("MM");
+        return format.format(date);
+    }
 }

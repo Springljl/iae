@@ -4,6 +4,7 @@ import com.spring2ljl.IpUtil;
 import com.spring2ljl.UserContext;
 import com.spring2ljl.pojo.User;
 import com.spring2ljl.service.UserService;
+import com.spring2ljl.service.WorkService;
 import com.spring2ljl.utils.Md5Util;
 import com.spring2ljl.utils.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MainCtrl {
     @Autowired
     private UserService userService;
+    @Autowired
+    private WorkService workService;
     @RequestMapping("")
     public String index(){
         return "index";
@@ -48,9 +52,18 @@ public class MainCtrl {
         UserContext.removeUser();
         return "redirect:/";
     }
-    @RequestMapping("table")
-    public String table(){
-        return "table";
+    @RequestMapping("work")
+    public String work(){
+        return "work";
+    }
+    @RequestMapping("workstastics")
+    public String workstastics(Model mode){
+        workService.getMap(mode);
+        return "workstastics";
+    }
+    @RequestMapping("all")
+    public String all(){
+        return "all";
     }
     @RequestMapping("info")
     public String info(Model model, HttpServletRequest request) {

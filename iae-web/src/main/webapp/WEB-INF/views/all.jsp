@@ -29,7 +29,7 @@
     </div>
 </script>
 <div style="display: none;margin-top: 10px" id="form">
-    <form class="layui-form" method="post" action="/info/update">
+    <form class="layui-form" method="post" action="/work/update">
         <input type="hidden" name="id">
         <div class="layui-form-item">
             <label class="layui-form-label">金额</label>

@@ -19,9 +19,16 @@ To change this template use File | Settings | File Templates.
 <body style="min-width: 800px">
 <ul class="layui-nav layui-bg-blue">
     <li class="layui-nav-item layui-this"><a href="/charts" target="iframe">图形分析</a></li>
-    <li class="layui-nav-item"><a href="/table" target="iframe">所有记录</a></li>
+    <li class="layui-nav-item"><a href="/all" target="iframe">所有记录</a></li>
     <li class="layui-nav-item"><a href="/info/month" target="iframe">每月详情</a></li>
     <li class="layui-nav-item"><a href="/info" target="iframe">修改信息</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">工作记录</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd> <a href="/work" target="iframe">所有工作记录</a></dd>
+            <dd><a href="/workstastics" target="iframe">统计</a></dd>
+        </dl>
+    </li>
     <li class="layui-nav-item" style="float: right"><a href="javascript:;" onclick="logout()">退出</a></li>
     <li class="layui-nav-item" style="float: right">欢迎${user.userName}</li>
 </ul>
